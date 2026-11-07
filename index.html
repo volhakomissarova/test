@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111110">
+    <meta name="description" content="Give your photos the soft black-and-white character of 35 mm film, right in your browser.">
+    <title>Quiet Light — Black-and-White Film</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Quiet Light — home">
+        <span class="wordmark-icon" aria-hidden="true">◒</span>
+        <span>QUIET LIGHT</span>
+      </a>
+      <span class="topbar-note">A BLACK-AND-WHITE PHOTOGRAPHY LAB</span>
+      <span class="privacy-note"><span class="privacy-dot"></span> Your photos stay on your device</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">YOUR PHOTOGRAPH, IN A DIFFERENT LIGHT</p>
+        <h1 id="page-title">A moment, held <em>in time.</em></h1>
+        <p class="intro-copy">Soft monochrome tones, delicate grain, and the character of 35 mm film.<br class="desktop-break"> Nothing in the scene changes — only the photographic aesthetic.</p>
+      </section>
+
+      <section class="workspace" aria-label="Photo upload and processing">
+        <div class="upload-panel" id="uploadPanel">
+          <input id="fileInput" class="visually-hidden" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/bmp,image/gif">
+          <div class="upload-content" id="uploadContent">
+            <div class="upload-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M16 21V7m0 0-5 5m5-5 5 5M7 20v5.5A1.5 1.5 0 0 0 8.5 27h15a1.5 1.5 0 0 0 1.5-1.5V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h2>Begin with a single frame</h2>
+            <p class="upload-description">Drop a photo here<br>or choose one from your device</p>
+            <button type="button" class="button button-primary" id="chooseButton">Choose a photo <span aria-hidden="true">↗</span></button>
+            <p class="upload-limit">JPEG, PNG, WEBP, AVIF · up to 20 MB</p>
+          </div>
+          <div class="processing-state" id="processingState" hidden>
+            <span class="processing-ring" aria-hidden="true"></span>
+            <p>Developing your frame…</p>
+            <div class="progress-track"><span id="progressBar"></span></div>
+            <p class="progress-label" id="progressLabel">Preparing your image</p>
+          </div>
+        </div>
+
+        <p class="error-message" id="errorMessage" role="alert" hidden></p>
+
+        <section class="result" id="result" aria-label="Photo comparison" hidden>
+          <div class="result-heading">
+            <div>
+              <p class="eyebrow finished-frame-label" id="finishedFrameLabel" tabindex="0">YOUR FINISHED FRAME</p>
+              <h2 id="resultName">Your photo</h2>
+            </div>
+            <button type="button" class="button button-primary download-button" id="downloadButton" disabled>Download PNG <span aria-hidden="true">↓</span></button>
+          </div>
+          <div class="comparison">
+            <figure class="image-card">
+              <div class="image-frame"><img id="originalPreview" alt="Original photo"></div>
+              <figcaption><span>ORIGINAL</span><span class="image-dimensions" id="originalDimensions"></span></figcaption>
+            </figure>
+            <figure class="image-card image-card-result">
+              <div class="image-frame"><img id="resultPreview" alt="Photo after monochrome processing"></div>
+              <figcaption><span>35 MM · MONOCHROME</span><span class="image-dimensions" id="resultDimensions"></span></figcaption>
+            </figure>
+          </div>
+          <div class="result-footer">
+            <span>SOFT CONTRAST · ORGANIC GRAIN · NATURAL MIDTONES</span>
+            <button type="button" class="text-button" id="anotherButton">Process another photo <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>QUIET LIGHT</span>
+      <span class="photo-credit">Background photo: <a href="https://commons.wikimedia.org/wiki/File:Endless_Fog_(135115907).jpeg" rel="noreferrer">Mattos Berger / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by/3.0/" rel="noreferrer">CC BY 3.0</a> · monochrome treatment applied</span>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
